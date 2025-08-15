@@ -70,7 +70,9 @@ function App() {
         <div className="TelaFinalBoxResultados">
           <h1>Resultado Final</h1>
           <p>
-            Você acertou <strong>{acertos}</strong> de {questionario.length} perguntas.
+            {acertos < 10
+              ? `Você acertou ${acertos} de ${questionario.length} perguntas. Infelizmente não ganha balinha...`
+              : `Você acertou mais de 7 perguntas, ganha balinha!`}
           </p>
         </div>
 
