@@ -4,6 +4,8 @@ import "./App.css"
 function App() {
   const [feedback, setFeedback] = useState("")
   const [NumeroDaQuestao, setNumeroDaQuestao] = useState(0)
+  const [desabilitado, setDesabilitado] = useState(false)
+
   const questionario = [
     {
       pergunta: "Quem é o Deus do sol na mitologia japonesa?",
@@ -108,6 +110,8 @@ function App() {
   }
 
   function verificaResposta(respostaEscolhida) {
+    setDesabilitado(true) // trava os botões
+
     if (respostaEscolhida === questionario[NumeroDaQuestao].respostaCerta){
       setFeedback("Certa a reposta!")
     } else {
@@ -115,9 +119,17 @@ function App() {
     }
 
     if (NumeroDaQuestao >= (questionario.length - 1)) {
-      setTimeout(() => {setFeedback(""), setNumeroDaQuestao(0)}, 1300)
+      setTimeout(() => {
+        setFeedback("")
+        setDesabilitado(false) 
+        setNumeroDaQuestao(0)
+      }, 1300)
     } else {
-      setTimeout(() => {setFeedback(""), setNumeroDaQuestao((old) => old + 1)}, 1300)
+      setTimeout(() => {
+        setFeedback("")
+        setDesabilitado(false)
+        setNumeroDaQuestao((old) => old + 1)
+      }, 1300)
     }
   }
 
@@ -131,6 +143,7 @@ function App() {
             <li>
               <button
                 onClick={() => {verificaResposta(questionario[NumeroDaQuestao].resposta1)}}
+                disabled={desabilitado} 
               >
                 {questionario[NumeroDaQuestao].resposta1}
               </button>
@@ -138,6 +151,7 @@ function App() {
             <li>
               <button
                 onClick={() => {verificaResposta(questionario[NumeroDaQuestao].resposta2)}}
+                disabled={desabilitado} 
               >
                 {questionario[NumeroDaQuestao].resposta2}
               </button>
@@ -153,6 +167,7 @@ function App() {
               : "transparent",
           padding: "1rem",
           borderRadius: "2rem",
+          fontSize: ".5rem",
         }}>
           <h1
           className={feedback ? "animar" : ""}
@@ -162,7 +177,9 @@ function App() {
         </span>
 
         <button className="BotaoProximaQuestao"
-          onClick={() => {geraNovaPergunta()}}>
+          onClick={() => {geraNovaPergunta()}}
+          disabled={desabilitado} 
+        >
           {NumeroDaQuestao >= (questionario.length-1) ? "Reiniciar" : "Pular pergunta"}
         </button>
       </main>
