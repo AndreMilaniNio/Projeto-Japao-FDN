@@ -5,185 +5,128 @@ function App() {
   const [feedback, setFeedback] = useState("")
   const [NumeroDaQuestao, setNumeroDaQuestao] = useState(0)
   const [desabilitado, setDesabilitado] = useState(false)
+  const [acertos, setAcertos] = useState(0)
 
   const questionario = [
-    {
-      pergunta: "Quem é o Deus do sol na mitologia japonesa?",
-      resposta1: "Amaterasu",
-      resposta2: "Susanoo",
-      respostaCerta: "Amaterasu",
-    },
-    {
-      pergunta: "Os “Oni” na mitologia japonesa são Deuses ou Yokais?",
-      resposta1: "Deuses",
-      resposta2: "Yokais",
-      respostaCerta: "Yokais",
-    },
-    {
-      pergunta: "A mitologia japonesa vem principalmente da religião Xintoísta ou Católica?",
-      resposta1: "Católica",
-      resposta2: "Xintoísta",
-      respostaCerta: "Xintoísta",
-    },
-    {
-      pergunta: "Os “Oni” são geralmente retratados como um espírito bondoso ou uma criatura maldosa?",
-      resposta1: "Maldosa",
-      resposta2: "Bondosa",
-      respostaCerta: "Maldosa",
-    },
-    {
-      pergunta: "Os animes vem principalmente do Japão?",
-      resposta1: "Sim",
-      resposta2: "Não",
-      respostaCerta: "Sim",
-    },
-    {
-      pergunta: "Qual cidade japonesa foi destruída por uma bomba atômica durante a Segunda Guerra Mundial?",
-      resposta1: "Hiroshima",
-      resposta2: "Kyoto",
-      respostaCerta: "Hiroshima",
-    },
-    {
-      pergunta: "Qual é a capital do Japão?",
-      resposta1: "Tóquio",
-      resposta2: "Osaka",
-      respostaCerta: "Tóquio",
-    },
-    {
-      pergunta: "Qual prato japonês é feito de arroz e peixe cru?",
-      resposta1: "Sushi",
-      resposta2: "Ramen",
-      respostaCerta: "Sushi",
-    },
-    {
-      pergunta: "Qual o nome do gato da sorte japonês que acena com a pata?",
-      resposta1: "Maneki Neko",
-      resposta2: "Tanuki",
-      respostaCerta: "Maneki Neko"
-    },
-    {
-      pergunta: "Qual era a principal arma dos samurais?",
-      resposta1: "Katana",
-      resposta2: "Armas de fogo",
-      respostaCerta: "Katana",
-    },
-    {
-      pergunta: "One Piece, Naruto e Dragon Ball são origininalmente japão?",
-      resposta1: "Não, da China!",
-      resposta2: "Sim, do Japão!",
-      respostaCerta: "Sim, do Japão!",
-    },
-    {
-      pergunta: "Qual árvore de flores rosa simboliza a primavera no Japão?",
-      resposta1: "Sakura",
-      resposta2: "Bonsai",
-      respostaCerta: "Sakura",
-    },
-    {
-      pergunta: "O anime 'Naruto' se passa em um mundo de ninjas ou samurais?",
-      resposta1: "Ninjas",
-      resposta2: "Samurais",
-      respostaCerta: "Ninjas",
-    },
-    {
-      pergunta: "O que é uma Geisha na cultura japonesa?",
-      resposta1: "Uma artista tradicional",
-      resposta2: "Uma guerreira samurai",
-      respostaCerta: "Uma artista tradicional",
-    },
-    {
-      pergunta: "O que significa 'Bushido', o código dos samurais?",
-      resposta1: "Caminho da honra",
-      resposta2: "Caminho do guerreiro",
-      respostaCerta: "Caminho da honra",
-    }
+    { pergunta: "Qual prato japonês é feito de arroz e peixe cru?", resposta1: "Ramen", resposta2: "Sushi", respostaCerta: "Sushi" },
+    { pergunta: "Qual é a capital do Japão?", resposta1: "Tóquio", resposta2: "Osaka", respostaCerta: "Tóquio" },
+    { pergunta: "Quem é o Deus do sol na mitologia japonesa?", resposta1: "Susanoo", resposta2: "Amaterasu", respostaCerta: "Amaterasu" },
+    { pergunta: "O anime 'Naruto' se passa em um mundo de ninjas ou samurais?", resposta1: "Samurais", resposta2: "Ninjas", respostaCerta: "Ninjas" },
+    { pergunta: "Os “Oni” na mitologia japonesa são Deuses ou Yokais?", resposta1: "Deuses", resposta2: "Yokais", respostaCerta: "Yokais" },
+    { pergunta: "Os animes vem principalmente do Japão?", resposta1: "Não", resposta2: "Sim", respostaCerta: "Sim" },
+    { pergunta: "O que é uma Geisha na cultura japonesa?", resposta1: "Uma guerreira samurai", resposta2: "Uma artista tradicional", respostaCerta: "Uma artista tradicional" },
+    { pergunta: "One Piece, Naruto e Dragon Ball são origininalmente japão?", resposta1: "Sim, do Japão!", resposta2: "Não, da China!", respostaCerta: "Sim, do Japão!" },
+    { pergunta: "Qual cidade japonesa foi destruída por uma bomba atômica durante a Segunda Guerra Mundial?", resposta1: "Kyoto", resposta2: "Hiroshima", respostaCerta: "Hiroshima" },
+    { pergunta: "Qual o nome do gato da sorte japonês que acena com a pata?", resposta1: "Tanuki", resposta2: "Maneki Neko", respostaCerta: "Maneki Neko" },
+    { pergunta: "O que significa 'Bushido', o código dos samurais?", resposta1: "Caminho do guerreiro", resposta2: "Caminho da honra", respostaCerta: "Caminho da honra" },
+    { pergunta: "A mitologia japonesa vem principalmente da religião Xintoísta ou Católica?", resposta1: "Xintoísta", resposta2: "Católica", respostaCerta: "Xintoísta" },
+    { pergunta: "Os “Oni” são geralmente retratados como um espírito bondoso ou uma criatura maldosa?", resposta1: "Bondosa", resposta2: "Maldosa", respostaCerta: "Maldosa" },
+    { pergunta: "Qual era a principal arma dos samurais?", resposta1: "Armas de fogo", resposta2: "Katana", respostaCerta: "Katana" },
+    { pergunta: "Qual árvore de flores rosa simboliza a primavera no Japão?", resposta1: "Bonsai", resposta2: "Sakura", respostaCerta: "Sakura" }
   ]
 
-  // Função para gerar nova pergunta
-  function geraNovaPergunta(){
-    if (NumeroDaQuestao >= (questionario.length-1)){
-      setNumeroDaQuestao(0)
-      return
+  function geraNovaPergunta() {
+    if (NumeroDaQuestao >= questionario.length - 1) {
+      setNumeroDaQuestao(questionario.length) // vai para a tela final
+    } else {
+      setNumeroDaQuestao(oldState => oldState + 1)
     }
-    
-    setNumeroDaQuestao(oldState => oldState + 1)
   }
 
   function verificaResposta(respostaEscolhida) {
-    setDesabilitado(true) // trava os botões
+    setDesabilitado(true)
 
-    if (respostaEscolhida === questionario[NumeroDaQuestao].respostaCerta){
-      setFeedback("Certa a reposta!")
+    if (respostaEscolhida === questionario[NumeroDaQuestao].respostaCerta) {
+      setAcertos(old => old + 1)
+      setFeedback("Certa a resposta!")
     } else {
-      setFeedback("Errada a reposta!")
+      setFeedback("Errada a resposta!")
     }
 
-    if (NumeroDaQuestao >= (questionario.length - 1)) {
-      setTimeout(() => {
-        setFeedback("")
-        setDesabilitado(false) 
-        setNumeroDaQuestao(0)
-      }, 1300)
-    } else {
-      setTimeout(() => {
-        setFeedback("")
-        setDesabilitado(false)
-        setNumeroDaQuestao((old) => old + 1)
-      }, 1300)
-    }
+    setTimeout(() => {
+      setFeedback("")
+      setDesabilitado(false)
+
+      if (NumeroDaQuestao >= questionario.length - 1) {
+        setNumeroDaQuestao(questionario.length) // tela final
+      } else {
+        setNumeroDaQuestao(old => old + 1)
+      }
+    }, 1200)
   }
 
-  return (
-    <>
-      <main>
-        <div className="CaixaQuestionario">
-          <h1>{NumeroDaQuestao+1}. {questionario[NumeroDaQuestao].pergunta}</h1>
+  function reiniciarQuiz() {
+    setNumeroDaQuestao(0)
+    setAcertos(0)
+    setFeedback("")
+    setDesabilitado(false)
+  }
 
-          <ul>
-            <li>
-              <button
-                onClick={() => {verificaResposta(questionario[NumeroDaQuestao].resposta1)}}
-                disabled={desabilitado} 
-              >
-                {questionario[NumeroDaQuestao].resposta1}
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => {verificaResposta(questionario[NumeroDaQuestao].resposta2)}}
-                disabled={desabilitado} 
-              >
-                {questionario[NumeroDaQuestao].resposta2}
-              </button>
-            </li>
-          </ul>
-        </div>
-        <span style={{
+  // Tela final
+  if (NumeroDaQuestao >= questionario.length) {
+    return (
+      <main className="TelaFinal">
+        <h1>🏆 Resultado Final</h1>
+        <p>
+          Você acertou <strong>{acertos}</strong> de {questionario.length} perguntas.
+        </p>
+        <button onClick={reiniciarQuiz}>Jogar novamente</button>
+      </main>
+    )
+  }
+
+  // Tela de perguntas
+  return (
+    <main>
+      <div className="CaixaQuestionario">
+        <h1>{NumeroDaQuestao + 1}. {questionario[NumeroDaQuestao].pergunta}</h1>
+
+        <ul>
+          <li>
+            <button
+              onClick={() => verificaResposta(questionario[NumeroDaQuestao].resposta1)}
+              disabled={desabilitado}
+            >
+              {questionario[NumeroDaQuestao].resposta1}
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => verificaResposta(questionario[NumeroDaQuestao].resposta2)}
+              disabled={desabilitado}
+            >
+              {questionario[NumeroDaQuestao].resposta2}
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <span
+        style={{
           backgroundColor:
-            feedback === "Certa a reposta!"
+            feedback === "Certa a resposta!"
               ? "lightgreen"
-              : feedback === "Errada a reposta!"
+              : feedback === "Errada a resposta!"
               ? "lightcoral"
               : "transparent",
           padding: "1rem",
           borderRadius: "2rem",
           fontSize: ".5rem",
-        }}>
-          <h1
-          className={feedback ? "animar" : ""}
-          >
-            {feedback}
-          </h1>
-        </span>
+        }}
+      >
+        <h1 className={feedback ? "animar" : ""}>{feedback}</h1>
+      </span>
 
-        <button className="BotaoProximaQuestao"
-          onClick={() => {geraNovaPergunta()}}
-          disabled={desabilitado} 
-        >
-          {NumeroDaQuestao >= (questionario.length-1) ? "Reiniciar" : "Pular pergunta"}
-        </button>
-      </main>
-    </>
+      <button
+        className="BotaoProximaQuestao"
+        onClick={geraNovaPergunta}
+        disabled={desabilitado}
+      >
+        {NumeroDaQuestao >= questionario.length - 1 ? "Finalizar" : "Pular pergunta"}
+      </button>
+
+      <p className="MadeBy">Made by André Milani</p>
+    </main>
   )
 }
 

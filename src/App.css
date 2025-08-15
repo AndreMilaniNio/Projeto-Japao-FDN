@@ -1,12 +1,11 @@
-main{
-    background-image: url(../public/JapanFlag.webp);
+main {
+    background-image: url(../public/JapanFlag.png);
     background-repeat: no-repeat;
-    background-size: 700px;
-    background-position-x: center;
-    background-position-y: 430px;
-
-    border: none;       /* Remove a borda */
-    outline: none;      /* Remove contorno */
+    background-size: 800px auto; /* largura fixa, altura proporcional */
+    background-position: center bottom; /* centralizado e colado na borda inferior */
+    
+    border: none;
+    outline: none;
 
     width: 100%;
     height: 100vh;
@@ -16,6 +15,7 @@ main{
     justify-content: center;
     align-items: center;
 }
+
 
 ul{
     display: flex;
@@ -74,6 +74,60 @@ button{
         background-color: rgb(241, 93, 93);
         transform: translateY(-2px);
     }
+}
+
+.MadeBy{
+    position: absolute;
+    bottom: 1%;
+
+    font-size: .75rem;
+    color: white;
+}
+
+
+/* Tela final */
+.TelaFinal {
+    background-image: url(../public/JapanFlag.png);
+    background-repeat: no-repeat;
+    background-size: 800px auto;
+    background-position: center bottom;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 2rem; /* espaço entre os elementos */
+}
+
+.TelaFinal h1 {
+    font-size: 2.5rem;
+    color: black;
+}
+
+.TelaFinal p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: black;
+}
+
+.TelaFinal button {
+    min-width: 150px;
+    padding: 0.8rem 1.2rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 1rem;
+    background-color: gainsboro;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+.TelaFinal button:hover {
+    background-color: rgb(241, 93, 93);
+    transform: translateY(-2px);
 }
 
 
