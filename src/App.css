@@ -1,4 +1,13 @@
 main{
+    background-image: url(../public/JapanFlag.webp);
+    background-repeat: no-repeat;
+    background-size: 700px;
+    background-position-x: center;
+    background-position-y: 430px;
+
+    border: none;       /* Remove a borda */
+    outline: none;      /* Remove contorno */
+
     width: 100%;
     height: 100vh;
 
@@ -20,7 +29,6 @@ ul{
     min-height: 250px;
     padding: 2rem;
 
-    border: 3px solid gainsboro;
     border-radius: 2rem;
     text-align: justify;
 
@@ -35,7 +43,7 @@ span{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
+    margin: 0px 0px 200px;
     height: 50px;
 }
 

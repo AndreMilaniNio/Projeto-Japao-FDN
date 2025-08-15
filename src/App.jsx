@@ -66,10 +66,10 @@ function App() {
       respostaCerta: "Katana",
     },
     {
-      pergunta: "One Piece, Naruto e Dragon Ball vieram do japão?",
+      pergunta: "One Piece, Naruto e Dragon Ball são origininalmente japão?",
       resposta1: "Não, da China!",
-      resposta2: "Sim, do japão",
-      respostaCerta: "Hayao Miyazaki",
+      resposta2: "Sim, do Japão!",
+      respostaCerta: "Sim, do Japão!",
     },
     {
       pergunta: "Qual árvore de flores rosa simboliza a primavera no Japão?",
@@ -125,7 +125,7 @@ function App() {
     <>
       <main>
         <div className="CaixaQuestionario">
-          <h1>{questionario[NumeroDaQuestao].pergunta}</h1>
+          <h1>{NumeroDaQuestao+1}. {questionario[NumeroDaQuestao].pergunta}</h1>
 
           <ul>
             <li>
