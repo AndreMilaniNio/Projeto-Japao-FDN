@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap');
+
+/* Reset CSS */
+*{
+  font-family: 'Sawarabi Mincho', serif;
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
