@@ -20,7 +20,7 @@ function App() {
       { pergunta: "O que significa 'Bushido', o código dos samurais?", resposta1: "Caminho da honra", resposta2: "Caminho do guerreiro", respostaCerta: "Caminho da honra" }, // res1 certa
       { pergunta: "Qual cidade japonesa foi destruída por uma bomba atômica durante a Segunda Guerra Mundial?", resposta1: "Kyoto", resposta2: "Hiroshima", respostaCerta: "Hiroshima" }, // res2 certa
       { pergunta: "Os “Oni” são geralmente retratados como um espírito bondoso ou uma criatura maldosa?", resposta1: "Maldosa", resposta2: "Bondosa", respostaCerta: "Maldosa" }, // res1 certa
-      { pergunta: "One Piece, Naruto e Dragon Ball são origininalmente japão?", resposta1: "Não, da China!", resposta2: "Sim, do Japão!", respostaCerta: "Sim, do Japão!" }, // res2 certa
+      { pergunta: "One Piece, Naruto e Dragon Ball são origininalmente do japão?", resposta1: "Não, da China!", resposta2: "Sim, do Japão!", respostaCerta: "Sim, do Japão!" }, // res2 certa
       { pergunta: "A mitologia japonesa vem principalmente da religião Xintoísta ou Católica?", resposta1: "Xintoísta", resposta2: "Católica", respostaCerta: "Xintoísta" }, // res1 certa
       { pergunta: "Qual era a principal arma dos samurais?", resposta1: "Armas de fogo", resposta2: "Katana", respostaCerta: "Katana" }, // res2 certa
   ];
@@ -72,7 +72,7 @@ function App() {
           <p>
             {acertos < 10
               ? `Você acertou ${acertos} de ${questionario.length} perguntas. Infelizmente não ganha balinha...`
-              : `Você acertou mais de 7 perguntas, ganha balinha!`}
+              : `Você acertou mais de 10 perguntas, ganha balinha!`}
           </p>
         </div>
 
